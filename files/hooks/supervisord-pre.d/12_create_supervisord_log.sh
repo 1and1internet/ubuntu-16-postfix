@@ -16,3 +16,5 @@ fi
 chown root:syslog /var/log
 
 chmod 770 /var/log
+chmod 0644 /etc/logrotate.d/logrotate
+chmod 700 /usr/local/bin/logrotated.sh

@@ -1,0 +1,17 @@
+/var/log/auth.log
+/var/log/syslog
+/var/log/supervisor/supervisord.log
+{
+   su root syslog
+   rotate 7
+   daily
+   missingok
+   notifempty
+   delaycompress
+   compress
+   copytruncate
+   dateext
+   postrotate
+    invoke-rc.d rsyslog rotate > /dev/null
+   endscript
+}
