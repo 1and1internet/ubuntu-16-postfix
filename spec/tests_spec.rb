@@ -22,7 +22,8 @@ RSpec.configure do |c|
   set :backend, :docker
 #  set :docker_debug, true
   set :docker_image, @image.id
-  set :docker_container_start_timeout, 5
+  set :docker_container_start_timeout, 15
+  set :docker_container_ready_regex, /READY/
 
   describe "tests" do
     include_examples 'postfix'
