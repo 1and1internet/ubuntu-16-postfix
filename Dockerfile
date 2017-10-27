@@ -28,6 +28,7 @@ RUN \
   postconf -e 'smtpd_recipient_restrictions = permit_sasl_authenticated,permit_mynetworks,reject_unauth_destination' && \
   postconf -e 'inet_interfaces = all' && \
   postconf -e 'smtpd_sender_restrictions = check_policy_service inet:172.30.10.20:10031' && \
+  postconf -e 'smtpd_policy_service_default_action = REJECT "Sorry, the mail service is currently experiencing issues, please contact support."' && \
   echo 'pwcheck_method: saslauthd' >> /etc/postfix/sasl/smtpd.conf && \
   mkdir -p /var/spool/postfix/var/run/saslauthd && \
   rm -rf /var/lib/apt/lists/* && \
