@@ -23,4 +23,5 @@ ldap_bind_dn: ${LDAP_BIND_DN}
 ldap_bind_pw: ${LDAP_BIND_PW}
 ldap_start_tls: yes
 ldap_tls_cacert_file: ${LDAP_CA_FILE}
+ldap_cache_ttl: 30
 EOF
