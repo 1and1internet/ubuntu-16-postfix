@@ -6,6 +6,7 @@ die() {
 }
 
 postconf -e "myhostname = ${DOMAIN}"
+postconf -e "smtp_fallback_relay = [smtp-01.mgmt.${DOMAIN}]"
 
 # SSL config
 if ! [ -z $SSL_CERT_FILE ] && ! [ -z $SSL_KEY_FILE ]; then
